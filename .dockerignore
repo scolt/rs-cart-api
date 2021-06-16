@@ -1,0 +1,6 @@
+# avoid copying local node_modules and build to docker image
+node_modules
+build
+
+# tests is not necessary for the production build
+test
