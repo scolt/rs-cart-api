@@ -28,4 +28,4 @@ COPY --from=BUILD-STAGE /temporary-build/node_modules ./node_modules
 
 # Bundle app source
 EXPOSE 8080
-CMD [ "node", "main" ]
+CMD [ "node", "dist/main" ]
