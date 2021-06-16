@@ -1,5 +1,5 @@
 # The first stage only for build needs, for optimizing size of docker image
-FROM node:12-alpine as BUILD-STAGE
+FROM node:12-alpine
 
 # Create temporary directory for build
 WORKDIR /temporary-build
@@ -23,8 +23,8 @@ RUN /temporary-build/node-prune
 FROM node:12-alpine
 WORKDIR /application
 
-COPY --from=BUILD-STAGE /temporary-build/dist ./dist
-COPY --from=BUILD-STAGE /temporary-build/node_modules ./node_modules
+COPY --from=0 /temporary-build/dist ./dist
+COPY --from=0 /temporary-build/node_modules ./node_modules
 
 # Bundle app source
 EXPOSE 4000
