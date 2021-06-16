@@ -4,7 +4,8 @@ build
 
 # tests is not necessary for the production build
 test
-# Elastic Beanstalk Files
-.elasticbeanstalk/*
-.git
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+.git
 .gitignore

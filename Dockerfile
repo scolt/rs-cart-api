@@ -27,5 +27,5 @@ COPY --from=BUILD-STAGE /temporary-build/dist ./dist
 COPY --from=BUILD-STAGE /temporary-build/node_modules ./node_modules
 
 # Bundle app source
-EXPOSE 8080
+EXPOSE 4000
 CMD [ "node", "dist/main" ]
